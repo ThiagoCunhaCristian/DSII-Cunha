@@ -1,5 +1,5 @@
 <?php 
-namesapace Application\Entity;
+namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -18,7 +18,7 @@ class Genero
     protected $id;
 
     /**
-        * @ORM\Column(type="string", Length=50, unique=TRUE)
+        * @ORM\Column(type="string", length=50, unique=TRUE)
     **/
     protected $descricao;
 
@@ -28,7 +28,7 @@ class Genero
     protected $livros;
 
     //Construtor
-    public function __contruct()
+    public function __construct()
     {
         $this->livros = new ArrayCollection();
     }
@@ -39,7 +39,7 @@ class Genero
         if (!$this->livros->contains($livro)){
             $this->livros->add($livro);
         }
-    return $this;
+        return $this;
     }
 
     public function removeLivro($livro)
